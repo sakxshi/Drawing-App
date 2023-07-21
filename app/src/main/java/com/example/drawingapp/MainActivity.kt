@@ -44,15 +44,18 @@ class MainActivity : AppCompatActivity() {
     private val requestPermission: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
                 permissions ->
-                permissions.entries.forEach {
+                permissions.entries.forEach{
                 val perMissionName = it.key
                 val isGranted = it.value
-                if (isGranted){
-                     if (perMissionName == Manifest.permission.READ_EXTERNAL_STORAGE){
+                if (isGranted)
+                {
+                     if (perMissionName == Manifest.permission.READ_EXTERNAL_STORAGE)
+                     {
                     Toast.makeText(this@MainActivity, "Permission granted now you can read the storage files.", Toast.LENGTH_LONG).show()
                       }
                 }
-                else {
+                else
+                {
 
                         Toast.makeText(this@MainActivity, "Oops you just denied the permission.", Toast.LENGTH_LONG).show()
                 }
